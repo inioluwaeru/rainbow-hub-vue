@@ -36,7 +36,7 @@
                 <a href="#" class="ml-5">Blog</a>
             </div>  
            
-            <img src="../../assets/img/logo.avif" class="ml-12 md:ml-48 lg:ml-0" width="100px" alt="">
+            <img src="../../assets/img/logo.avif" class="ml-12 md:ml-48 lg:mr-72" width="100px" alt="">
             <div class="nav-btns flex py-10">
                 <a class="mr-5" href="#" @click="cartToggle"><button class="h-8 w-8 icon-cart"></button></a>
                 <a class="mr-5 hidden md:block" href="#" @click="accountToggle"><button class="h-8 w-8 icon-profile"></button></a>
@@ -111,8 +111,6 @@
                         </div>
 
                     </div>
-                    
-                
             </div>
         </transition> 
         <transition name="fade">

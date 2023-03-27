@@ -1,9 +1,9 @@
 <template>
     <div class="py-24 px-2 md:px-2 lg:px-24 flex flex-wrap justify-between ">
         <div @mouseenter="showToggle" @mouseleave="hideToggle" class=" h-72 w-44 md:w-36 lg:w-60 relative mb-10">
-            <div v-if="hover" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12">
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white">Quick View</button>
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white">Add to Cart</button>
+            <div v-if="hover" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12 hidden lg:block">
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white" @click="openPro">Quick View</button>
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white" @click="cartToggle">Add to Cart</button>
                 </div>
                 <transition  v-if="hover" name="fade">
                 <a href="#">
@@ -20,14 +20,14 @@
                     <span>₦7,000.00</span>
                 </div>
                 <div class="h-20 w-10 bg-white flex flex-col justify-between text-center rounded-full absolute bottom-20 right-2 shadow-lg-black lg:hidden">
-                    <a href="#" ><i class="fal fa-shopping-cart h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
-                    <a href="#"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="cartToggle"><i class="fal fa-shopping-cart h-10 w-10 b bg-white rounded-full icon py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="openPro"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full py-3 icon hover:bg-black"></i></a>
             </div>
     </div>
         <div @mouseenter="showToggle2" @mouseleave="hideToggle2" class="h-72 w-40 lg:w-60 relative">
-            <div v-if="hover2" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12">
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white">Quick View</button>
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white">Add to Cart</button>
+            <div v-if="hover2" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12 hidden lg:block">
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white" @click="openPro">Quick View</button>
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white " @click="cartToggle">Add to Cart</button>
                 </div>
                 <transition  v-if="hover2" name="fade">
                 <a href="#">
@@ -44,14 +44,14 @@
                     <span>₦3,500.00</span>
                 </div>
                 <div class="h-20 w-10 bg-white flex flex-col justify-between text-center rounded-full absolute bottom-20 right-2 shadow-lg-black lg:hidden">
-                    <a href="#" ><i class="fal fa-shopping-cart h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
-                    <a href="#"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="cartToggle"><i class="fal fa-shopping-cart h-10 w-10 b bg-white rounded-full py-3 icon hover:bg-black"></i></a>
+                    <a href="#" @click="openPro"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full py-3 hover:bg-black icon"></i></a>
             </div>
     </div>
         <div @mouseenter="showToggle3" @mouseleave="hideToggle3" class=" h-72  w-40 md:w-56 lg:w-60 relative">
-            <div v-if="hover3" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12">
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white">Quick View</button>
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white">Add to Cart</button>
+            <div v-if="hover3" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12 hidden lg:block">
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white" @click="openPro">Quick View</button>
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white" @click="cartToggle">Add to Cart</button>
                 </div>
                 <transition  v-if="hover3" name="fade">
                 <a href="#">
@@ -68,14 +68,14 @@
                     <span>₦8,000.00</span>
                 </div>
                 <div class="h-20 w-10 bg-white flex flex-col justify-between text-center rounded-full absolute bottom-20 right-2 shadow-lg-black lg:hidden">
-                    <a href="#" ><i class="fal fa-shopping-cart h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
-                    <a href="#"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="cartToggle"><i class="fal fa-shopping-cart h-10 w-10 b icon bg-white rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="openPro"><i class="fal fa-eye h-10 w-10 b bg-white icon rounded-full py-3 hover:bg-black"></i></a>
             </div>
     </div>
         <div  @mouseenter="showToggle4" @mouseleave="hideToggle4" class=" h-72 w-40 md:w-56 lg:w-72 relative">
-                <div v-if="hover4" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-16">
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white">Quick View</button>
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white">Add to Cart</button>
+                <div v-if="hover4" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-16 hidden lg:block">
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white" @click="openPro">Quick View</button>
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white" @click="cartToggle">Add to Cart</button>
                 </div>
                 <transition  v-if="hover4" name="fade">
                 <a href="#">
@@ -92,14 +92,14 @@
                     <span>₦3,500.00</span>
                 </div>
                 <div class="h-20 w-10 bg-white flex flex-col justify-between text-center rounded-full absolute bottom-20 right-2 shadow-lg-black lg:hidden">
-                    <a href="#" ><i class="fal fa-shopping-cart h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
-                    <a href="#"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="cart"><i class="fal fa-shopping-cart h-10 w-10 b icon bg-white rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="openPro"><i class="fal fa-eye h-10 w-10 b bg-white icon rounded-full py-3 hover:bg-black"></i></a>
             </div>
     </div>
         <div @mouseenter="showToggle5" @mouseleave="hideToggle5" class=" h-72 w-40 md:w-36 lg:w-60 relative">
-            <div v-if="hover5" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12">
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white">Quick View</button>
-                    <button class="h-20 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white">Add to Cart</button>
+            <div v-if="hover5" class="h-56 w-full absolute z-50 bgp flex flex-col py-24 px-12 hidden lg:block">
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black mb-2 text-black hover:text-white" @click="openPro">Quick View</button>
+                    <button class="h-10 w-40 rounded-full bg-white hover:bg-black text-black hover:text-white" @click="cartToggle">Add to Cart</button>
                 </div>
                 <transition  v-if="hover5" name="fade">
                 <a href="#">
@@ -116,10 +116,32 @@
                     <span>₦4,000.00</span>
                 </div>
                 <div class="h-20 w-10 bg-white flex flex-col justify-between text-center rounded-full absolute bottom-20 right-2 shadow-lg-black lg:hidden">
-                    <a href="#" ><i class="fal fa-shopping-cart h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
-                    <a href="#"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="cartToggle"><i class="fal fa-shopping-cart h-10 w-10 b bg-white icon rounded-full py-3 hover:bg-black"></i></a>
+                    <a href="#" @click="openPro"><i class="fal fa-eye h-10 w-10 b bg-white rounded-full icon py-3 hover:bg-black"></i></a>
             </div>
     </div>
+    <transition name="slide-fade">
+                <div v-if="cart" class="fixed top-0 right-0 w-80 z-50 bg-white h-screen">
+                    <div class="flex justify-between px-5 h-16 border">
+                        <h1 class="my-5 text-l">SHOPPING CART</h1>
+                        <button @click="cartToggle" class="text-2xl">X</button>
+                    </div>
+                    <div class="px-4 py-7 h-96 border border-y-2 border-b-0">
+                        <div class="flex  text-start mb-8">
+                            <div class="bg-shop h-32 w-32" alt=""></div>
+                            <div class="ml-3">
+                                <h1>Essential Pack</h1>
+                                <p class="text-gray-400">₦7,000.00</p>
+                                <i class="fas fa-bin"></i>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+        </transition> 
+        <transition name="fade">
+            <div @click="cartToggle" v-if="cart" class="h-screen w-full fixed top-0 left-0 z-20 bg "></div>
+        </transition>
 </div>
 </template>
 
@@ -132,7 +154,8 @@ export default {
             hover2: false,
             hover3: false,
             hover4: false,
-            hover5: false
+            hover5: false,
+            cart: false
         }
     },
     methods: {
@@ -165,7 +188,13 @@ export default {
         },
         hideToggle5() {
             this.hover5 =false
-        }
+        },
+        openPro() {
+            this.$emit('open')
+        },
+        cartToggle() {
+                this.cart = !this.cart
+            }
     }
     }
 </script>
@@ -173,6 +202,9 @@ export default {
 <style scoped>
     span{
         color:#696969;
+    }
+    .icon:hover{
+        color: white;
     }
     .bgp{
         background-color: #87878765;
@@ -229,6 +261,39 @@ export default {
         background-size: 16rem;
         transition: 1s;
     }
+
+    .bg{
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .bg-shop{
+        background-image: url(https://cdn.shopify.com/s/files/1/0263/2430/3946/products/Untitleddesign_69338fff-a36a-4d07-ae57-3609143c5f02_180x.png?v=1660228614);
+        background-size: 10rem;
+        background-position: center;
+
+    }
+    .slide-fade-enter-active {
+        transition: all 0.2s ease-in;
+        position: absolute;
+        right: 0;
+        }
+
+      .slide-fade-leave-active {
+        transition: all 0.2s;
+        position: absolute;
+        right: -800px;
+        }
+
+       .slide-fade-enter-from,
+       .slide-fade-leave-to {
+        opacity: 0;
+        position: absolute;
+        right: -800px;
+        }
+        .fade-enter-from,
+        .fade-leave-to {
+        opacity: 0;
+        }
     @media (max-width: 770px) {
         .pro-1,.pro-2,.pro-3{
             background-size: 12rem;
